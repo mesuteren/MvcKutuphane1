@@ -1,0 +1,66 @@
+﻿@using MvcKutuphane.Models.Entity
+@model List<TBLYAZAR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<table class="table table-dark table-hover">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>DETAY</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var y in Model)
+    {
+        <tr>
+            <td>@y.ID</td>
+            <td>@y.AD</td>
+            <td>@y.SOYAD</td>
+            <td>@y.DETAY</td>
+            <td>@Html.ActionLink("Sil", "YazarSil", new { id = y.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Yazar/YazarGetir/@y.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+
+<a class="btn btn-primary" href="/Yazar/YazarEkle/">Yeni Yazar Ekle</a>
+<a class="btn btn-success" , onclick="return confirm('Emin misin?')" href="/Yazar/YazarEkle/">Yeni Yazar Ekle</a>
+<a class="btn btn-danger" , onclick="return confirm('Emin misin?')" href="/Yazar/YazarEkle/">Yeni Yazar Ekle</a>
+<a class="btn btn-warning" , onclick="return confirm('Emin misin?')" href="/Yazar/YazarEkle/">Yeni Yazar Ekle</a>
+
+<div>
+    <h2>Mesut Eren</h2>
+    <p>Mesut Eren</p>
+    <img src="~/Image/writer.jpg" class="img-responsive" alt="Cinque Terre" width="304" height="236">
+    <h2></h2>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Bootstrap Tutorial</h1>
+            <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
+        </div>
+    </div>
+
+
+    <div class="container-fluid p-3 my-3 bg-primary text-white">
+        <h1>My First Bootstrap Page</h1>
+        <p>This container has a blue background color and a white text, and some extra padding and margins.</p>
+    </div>
+
+    <div class="container-fluid p-3 my-3 bg-info text-white">
+        <h1>My First Bootstrap Page</h1>
+        <p>This container has a blue background color and a white text, and some extra padding and margins.</p>
+    </div>
+
+
+
+

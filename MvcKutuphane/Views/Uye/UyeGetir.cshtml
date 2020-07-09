@@ -1,0 +1,65 @@
+﻿@model MvcKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UyeGuncelle", "Uye", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class=" form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+
+        <br />
+        @*@Html.LabelFor(k => k.AD)*@
+        <label>Üye Adı</label>
+        @*@Html.TextBoxFor(k => k.AD, new { @class = "form-control" })*@
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:red" })
+        <br />
+        <br />
+        @*@Html.LabelFor(k => k.AD)*@
+        <label>Üye Soyadı</label>
+
+        @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:red" })
+        <br />
+        <label>Kullanıcı Adı</label>
+
+        @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.KULLANICIADI, "", new { @style = "color:red" })
+        <br />
+        <label>Şifre</label>
+
+        @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.SIFRE, "", new { @style = "color:red" })
+        <br />
+        <label>Mail Adresi</label>
+
+        @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:red" })
+        <br />
+        <label>Telefon</label>
+
+        @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:red" })
+        <br />
+        <label>Okul</label>
+
+        @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.OKUL, "", new { @style = "color:red" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

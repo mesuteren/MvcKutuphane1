@@ -1,0 +1,88 @@
+﻿@model MvcKutuphane.Models.Entity.TBLYAZAR
+
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("YazarGuncelle", "Yazar", FormMethod.Post))
+
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            <label>Yazar ID</label>
+            @Html.TextBoxFor(y => y.ID, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yazar Adı</label>
+            @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yazar Soyadı</label>
+            @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yazar Detayı</label>
+            @Html.TextAreaFor(y => y.DETAY, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-warning">Yazar Bilgilerini Güncelle</button>
+        <div style="margin-bottom:15px"> </div>
+        <div class="alert alert-info">
+            <strong>Yazar Bilgilerini Güncelle</strong> Güncellenecek Yerleri değiştirin ve güncelle butonuna tıklayın.
+        </div>
+        <div class="alert alert-danger">
+            <strong>Yazar Bilgilerini Güncelle</strong> Güncellenecek Yerleri değiştirin ve güncelle butonuna tıklayın.
+        </div>
+        <div class="alert alert-success">
+            <strong>Yazar Bilgilerini Güncelle</strong> Güncellenecek Yerleri değiştirin ve güncelle butonuna tıklayın.
+        </div>
+        <div class="alert alert-warning">
+            <strong>Yazar Bilgilerini Güncelle</strong> Güncellenecek Yerleri değiştirin ve güncelle butonuna tıklayın.
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Default</td>
+                    <td>Defaultson</td>
+                    <td>def@somemail.com</td>
+                </tr>
+                <tr class="success">
+                    <td>Success</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr class="danger">
+                    <td>Danger</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr class="info">
+                    <td>Info</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                </tr>
+                <tr class="warning">
+                    <td>Warning</td>
+                    <td>Refs</td>
+                    <td>bo@example.com</td>
+                </tr>
+                <tr class="active">
+                    <td>Active</td>
+                    <td>Activeson</td>
+                    <td>act@example.com</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+}
+
